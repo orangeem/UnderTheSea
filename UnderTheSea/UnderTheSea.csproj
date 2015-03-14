@@ -59,6 +59,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\images\undersea.jpg" />
+    <Content Include="assets\images\undersea_1.png" />
+    <Content Include="assets\images\Untitled-6.png" />
+    <Content Include="assets\images\utilities.png" />
+    <Content Include="assets\images\_sdfundersea_1.png" />
     <Content Include="packages.config" />
     <Content Include="Scripts\lib\jquery-2.1.1.min.map" />
     <None Include="Web.Debug.config">
@@ -145,7 +150,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>34002</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:34002/</IISUrl>
+          <IISUrl>http://localhost:8888/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
