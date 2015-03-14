@@ -5,7 +5,9 @@
         { id: "ocean", src: "assets/images/Untitled-6.png" },
         { id: "engine", src: "assets/sounds/engine.ogg" },
         { id: "thunder", src: "assets/sounds/thunder.ogg" },
-        { id: "yay", src: "assets/sounds/yay.ogg" }
+        { id: "yay", src: "assets/sounds/yay.ogg" },
+        { id: "bgm", src: "assets/sounds/underthesea.ogg" }
+        
     ];
 
     // SpriteSheet Data Object
@@ -27,7 +29,8 @@
             [170, 0, 96, 101],
             [85, 0, 84, 68],
             [247, 269, 234, 65],
-            [0, 203, 237, 58]
+            [0, 203, 237, 58],
+            [0, 285, 237, 59]
         ],
         "animations": {
             "shark": [0],
@@ -35,7 +38,8 @@
             "treasurebox": [2],
             "submarine": [3],
             "playButton": [4],
-            "tryAgainButton": [5]
+            "tryAgainButton": [5],
+            "howtoplayButton":[6]
         }
     }
 

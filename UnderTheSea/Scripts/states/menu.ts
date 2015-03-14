@@ -35,13 +35,17 @@ module states {
         stage.cursor = "default";
 
         // Display Game Over
-        gameNameLabel = new objects.Label(stage.canvas.width / 2, 40, "MAIL PILOT");
+        gameNameLabel = new objects.Label(stage.canvas.width / 2, 40, "Under the SEA");
         game.addChild(gameNameLabel);
 
         // Display Play Again Button
-        playButton = new objects.Button(stage.canvas.width / 2, 300, "playButton");
+        playButton = new objects.Button(stage.canvas.width / 2, 250, "playButton");
         game.addChild(playButton);
         playButton.addEventListener("click", playButtonClicked);
+
+        howtoplayButton = new objects.Button(stage.canvas.width / 2, 350, "howtoplayButton");
+        game.addChild(howtoplayButton);
+        howtoplayButton.addEventListener("click", playButtonClicked);
 
         stage.addChild(game);
     }

@@ -12,8 +12,7 @@
 /// <reference path="states/menu.ts" />
 /// <reference path="states/gameover.ts" />
 
-// Mail Pilot Version 11 - Added basic state machine structure - Added Button and Label classes
-// Changed online repo
+
 
 var stage: createjs.Stage;
 var game: createjs.Container;
@@ -23,11 +22,13 @@ var submarine: objects.Submarine;
 var treasurebox: objects.Treasurebox;
 var sharks = []; // sharks array;
 var scoreboard: objects.Scoreboard;
+var bgmSound: createjs.SoundInstance;
 
 var collision: managers.Collision;
 
 var tryAgain: objects.Button;
 var playButton: objects.Button;
+var howtoplayButton: objects.Button;
 
 var currentState: number;
 var currentStateFunction;
@@ -36,6 +37,7 @@ var currentStateFunction;
 function preload(): void {
     managers.Assets.init();
     managers.Assets.loader.addEventListener("complete", init);
+       
 }
 
 // init called after Assets have been loaded.
@@ -48,6 +50,10 @@ function init(): void {
 
     currentState = constants.MENU_STATE;
     changeState(currentState);
+     
+    bgmSound = createjs.Sound.play("assets/sounds/underthesea.ogg", createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
+  
+    
 }
 
 // Add touch support for mobile devices
