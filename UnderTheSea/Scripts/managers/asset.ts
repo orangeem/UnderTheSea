@@ -30,10 +30,10 @@
             [0, 203, 237, 58]
         ],
         "animations": {
-            "cloud": [0],
+            "shark": [0],
             "instructionsButton": [1],
-            "island": [2],
-            "plane": [3],
+            "treasurebox": [2],
+            "submarine": [3],
             "playButton": [4],
             "tryAgainButton": [5]
         }

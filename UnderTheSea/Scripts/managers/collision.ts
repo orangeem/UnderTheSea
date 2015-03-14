@@ -1,21 +1,21 @@
-﻿/// <reference path="../objects/cloud.ts" />
-/// <reference path="../objects/island.ts" />
-/// <reference path="../objects/plane.ts" />
+﻿/// <reference path="../objects/shark.ts" />
+/// <reference path="../objects/treasurebox.ts" />
+/// <reference path="../objects/submarine.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 
 module managers {
     // Collision Manager Class
     export class Collision {
         // class variables
-        private plane: objects.Plane;
-        private island: objects.Island;
-        private clouds = [];
+        private submarine: objects.Submarine;
+        private treasurebox: objects.Treasurebox;
+        private sharks = [];
         private scoreboard: objects.Scoreboard;
 
-        constructor(plane: objects.Plane, island: objects.Island, clouds, scoreboard: objects.Scoreboard) {
-            this.plane = plane;
-            this.island = island;
-            this.clouds = clouds;
+        constructor(submarine: objects.Submarine, treasurebox: objects.Treasurebox, sharks, scoreboard: objects.Scoreboard) {
+            this.submarine = submarine;
+            this.treasurebox = treasurebox;
+            this.sharks = sharks;
             this.scoreboard = scoreboard;
         }
 
@@ -36,42 +36,42 @@ module managers {
             return result;
         }
 
-        // check collision between plane and any cloud object
-        private planeAndCloud(cloud: objects.Cloud) {
+        // check collision between submarine and any shark object
+        private submarineAndShark(shark: objects.Shark) {
             var p1: createjs.Point = new createjs.Point();
             var p2: createjs.Point = new createjs.Point();
-            p1.x = this.plane.image.x;
-            p1.y = this.plane.image.y;
-            p2.x = cloud.image.x;
-            p2.y = cloud.image.y;
-            if (this.distance(p1, p2) < ((this.plane.height / 2) + (cloud.height / 2))) {
+            p1.x = this.submarine.image.x;
+            p1.y = this.submarine.image.y;
+            p2.x = shark.image.x;
+            p2.y = shark.image.y;
+            if (this.distance(p1, p2) < ((this.submarine.height / 2) + (shark.height / 2))) {
                 createjs.Sound.play("thunder");
                 this.scoreboard.lives -= 1;
-                cloud.reset();
+                shark.reset();
             }
         }
 
-        // check collision between plane and island
-        private planeAndIsland() {
+        // check collision between submarine and treasure box
+        private submarineAndTreasurebox() {
             var p1: createjs.Point = new createjs.Point();
             var p2: createjs.Point = new createjs.Point();
-            p1.x = this.plane.image.x;
-            p1.y = this.plane.image.y;
-            p2.x = this.island.image.x;
-            p2.y = this.island.image.y;
-            if (this.distance(p1, p2) < ((this.plane.height / 2) + (this.island.height / 2))) {
+            p1.x = this.submarine.image.x;
+            p1.y = this.submarine.image.y;
+            p2.x = this.treasurebox.image.x;
+            p2.y = this.treasurebox.image.y;
+            if (this.distance(p1, p2) < ((this.submarine.height / 2) + (this.treasurebox.height / 2))) {
                 createjs.Sound.play("yay");
                 this.scoreboard.score += 100;
-                this.island.reset();
+                this.treasurebox.reset();
             }
         }
 
         // Utility Function to Check Collisions
         update() {
-            for (var count = 0; count < constants.CLOUD_NUM; count++) {
-                this.planeAndCloud(this.clouds[count]);
+            for (var count = 0; count < constants.SHARK_NUM; count++) {
+                this.submarineAndShark(this.sharks[count]);
             }
-            this.planeAndIsland();
+            this.submarineAndTreasurebox();
         }
     }
 } 

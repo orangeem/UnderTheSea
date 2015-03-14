@@ -1,7 +1,7 @@
 ﻿/// <reference path="../managers/asset.ts" />
 module objects {
-    // Cloud class
-    export class Cloud {
+    // shark class
+    export class Shark {
         image: createjs.Sprite;
         stage: createjs.Stage;
         game: createjs.Container;
@@ -12,7 +12,7 @@ module objects {
         constructor(stage: createjs.Stage, game: createjs.Container) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Sprite(managers.Assets.atlas, "cloud");
+            this.image = new createjs.Sprite(managers.Assets.atlas, "shark");
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.image.regX = this.width / 2;

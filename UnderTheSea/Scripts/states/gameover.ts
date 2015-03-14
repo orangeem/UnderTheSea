@@ -1,10 +1,10 @@
 ﻿/// <reference path="../constants.ts" />
 /// <reference path="../objects/button.ts" />
-/// <reference path="../objects/cloud.ts" />
-/// <reference path="../objects/island.ts" />
+/// <reference path="../objects/shark.ts" />
+/// <reference path="../objects/treasurebox.ts" />
 /// <reference path="../objects/label.ts" />
 /// <reference path="../objects/ocean.ts" />
-/// <reference path="../objects/plane.ts" />
+/// <reference path="../objects/submarine.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 module states {
     export function gameOverState() {

@@ -1,43 +1,33 @@
 ﻿/// <reference path="../managers/asset.ts" />
 module objects {
-    // Island Class
-    export class Island {
+    // submarine Class
+    export class Submarine {
         image: createjs.Sprite;
         stage: createjs.Stage;
         game: createjs.Container;
-        height: number;
+        engineSound: createjs.SoundInstance;
         width: number;
-        dx: number;
+        height: number;
         constructor(stage: createjs.Stage, game: createjs.Container) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Sprite(managers.Assets.atlas, "island");
+            this.image = new createjs.Sprite(managers.Assets.atlas, "submarine");
+            this.image.x = 50;
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.image.regX = this.width / 2;
             this.image.regY = this.height / 2;
-            this.reset();
-
-            this.dx = 5;
-
             game.addChild(this.image);
+            this.engineSound = createjs.Sound.play('engine', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
         }
+
 
         update() {
-            this.image.x -= this.dx;
-            if (this.image.x < 0) {
-                this.reset();
-            }
+            this.image.y = this.stage.mouseY;
         }
-
-        reset() {
-            this.image.y = Math.floor(Math.random() * this.stage.canvas.height);
-            this.image.x = this.stage.canvas.width;
-        }
-
         destroy() {
+            this.engineSound.stop();
             game.removeChild(this.image);
         }
     }
-
-}
+} 

@@ -1,15 +1,15 @@
 ﻿/// <reference path="../constants.ts" />
 /// <reference path="../objects/scoreboard.ts" />
-/// <reference path="../objects/plane.ts" />
+/// <reference path="../objects/submarine.ts" />
 /// <reference path="../objects/ocean.ts" />
-/// <reference path="../objects/island.ts" />
-/// <reference path="../objects/cloud.ts" />
+/// <reference path="../objects/treasurebox.ts" />
+/// <reference path="../objects/shark.ts" />
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />
 module states {
     export function playButtonClicked(event: MouseEvent) {
         stage.removeChild(game);
-        plane.destroy();
+        submarine.destroy();
         game.removeAllChildren();
         game.removeAllEventListeners();
         currentState = constants.PLAY_STATE;
@@ -18,7 +18,7 @@ module states {
 
     export function menuState() {
         ocean.update();
-        plane.update();
+        submarine.update();
     }
 
     export function menu() {
@@ -29,7 +29,7 @@ module states {
 
         // Instantiate Game Objects
         ocean = new objects.Ocean(stage, game);
-        plane = new objects.Plane(stage, game);
+        submarine = new objects.Submarine(stage, game);
 
         // Show Cursor
         stage.cursor = "default";
