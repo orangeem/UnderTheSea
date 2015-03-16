@@ -59,9 +59,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\images\undersea.jpg" />
-    <Content Include="assets\images\undersea_1.png" />
-    <Content Include="assets\images\Untitled-6.png" />
+    <Content Include="assets\images\underthesea.png" />
     <Content Include="assets\images\utilities.png" />
     <Content Include="assets\images\_sdfundersea_1.png" />
     <Content Include="packages.config" />
@@ -132,6 +130,7 @@
     <TypeScriptCompile Include="Scripts\objects\submarine.ts" />
     <TypeScriptCompile Include="Scripts\objects\scoreboard.ts" />
     <TypeScriptCompile Include="Scripts\states\gameover.ts" />
+    <TypeScriptCompile Include="Scripts\states\instruction.ts" />
     <TypeScriptCompile Include="Scripts\states\menu.ts" />
     <TypeScriptCompile Include="Scripts\states\play.ts" />
   </ItemGroup>
@@ -151,7 +150,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>34002</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:8888/</IISUrl>
+          <IISUrl>http://localhost:9999/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

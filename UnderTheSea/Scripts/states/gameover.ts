@@ -52,9 +52,9 @@ module states {
         game.addChild(tryAgain);
         tryAgain.addEventListener("click", tryAgainClicked);
 
-        howtoplayButton = new objects.Button(stage.canvas.width / 2, 350, "howtoplayButton");
-        game.addChild(howtoplayButton);
-        howtoplayButton.addEventListener("click", tryAgainClicked);
+        backToMenuButton = new objects.Button(stage.canvas.width / 2, 350, "backToMenuButton");
+        game.addChild(backToMenuButton);
+        backToMenuButton.addEventListener("click", states.backToMenuClicked);
 
 
         stage.addChild(game);

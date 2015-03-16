@@ -16,6 +16,15 @@ module states {
         changeState(currentState);
     }
 
+    export function instructionButtonClicked(event: MouseEvent) {
+        stage.removeChild(game);
+        submarine.destroy();
+        game.removeAllChildren();
+        game.removeAllEventListeners();
+        currentState = constants.GAME_INSTRUCTION_STATE;
+        changeState(currentState);
+    }
+
     export function menuState() {
         ocean.update();
         submarine.update();
@@ -43,9 +52,9 @@ module states {
         game.addChild(playButton);
         playButton.addEventListener("click", playButtonClicked);
 
-        howtoplayButton = new objects.Button(stage.canvas.width / 2, 350, "howtoplayButton");
-        game.addChild(howtoplayButton);
-        howtoplayButton.addEventListener("click", playButtonClicked);
+        howToPlayButton = new objects.Button(stage.canvas.width / 2, 350, "instructionsButton");
+        game.addChild(howToPlayButton);
+        howToPlayButton.addEventListener("click", instructionButtonClicked);
 
         stage.addChild(game);
     }

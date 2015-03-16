@@ -11,7 +11,7 @@
 /// <reference path="states/play.ts" />
 /// <reference path="states/menu.ts" />
 /// <reference path="states/gameover.ts" />
-
+/// <reference path="states/instruction.ts" />
 
 
 var stage: createjs.Stage;
@@ -28,7 +28,8 @@ var collision: managers.Collision;
 
 var tryAgain: objects.Button;
 var playButton: objects.Button;
-var howtoplayButton: objects.Button;
+var howToPlayButton: objects.Button;
+var backToMenuButton: objects.Button;
 
 var currentState: number;
 var currentStateFunction;
@@ -88,6 +89,12 @@ function changeState(state: number): void {
             currentStateFunction = states.gameOverState;
             // instantiate game over screen
             states.gameOver();
+            break;
+
+        case constants.GAME_INSTRUCTION_STATE:
+            currentStateFunction = states.instructionState;
+            // instantiate instruction screen
+            states.instruction();
             break;
     }
 }
