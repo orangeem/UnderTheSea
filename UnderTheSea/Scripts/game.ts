@@ -21,10 +21,12 @@ var ocean: objects.Ocean;
 var submarine: objects.Submarine;
 var treasurebox: objects.Treasurebox;
 var sharks = []; // sharks array;
+var octopuses = []; // octopuses array;
 var scoreboard: objects.Scoreboard;
 var bgmSound: createjs.SoundInstance;
 
 var collision: managers.Collision;
+var collision1: managers.Collision1;
 
 var tryAgain: objects.Button;
 var playButton: objects.Button;
@@ -55,7 +57,10 @@ function init(): void {
     bgmSound = createjs.Sound.play("assets/sounds/underthesea.ogg", createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
   
     
+    
 }
+
+
 
 // Add touch support for mobile devices
 function optimizeForMobile() {
@@ -95,6 +100,12 @@ function changeState(state: number): void {
             currentStateFunction = states.instructionState;
             // instantiate instruction screen
             states.instruction();
+            break;
+
+        case constants.PLAY_STATE2:
+            currentStateFunction = states.playState2;
+            // instantiate instruction screen
+            states.play1();
             break;
     }
 }

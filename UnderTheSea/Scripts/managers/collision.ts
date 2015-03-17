@@ -79,4 +79,5 @@ module managers {
             this.submarineAndTreasurebox();
         }
     }
+
 } 

@@ -1,5 +1,6 @@
 ﻿/// <reference path="../objects/button.ts" />
 /// <reference path="../objects/shark.ts" />
+/// <reference path="../objects/octopus.ts" />
 /// <reference path="../objects/treasurebox.ts" />
 /// <reference path="../objects/label.ts" />
 /// <reference path="../objects/ocean.ts" />
@@ -7,8 +8,7 @@
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../managers/collision.ts" />
 module states {
-    
-    export function playState() {
+    export function playState2() {
         ocean.update();
         treasurebox.update();
         submarine.update();
@@ -17,7 +17,11 @@ module states {
             sharks[count].update();
         }
 
-        collision.update();
+        for (var count = 0; count < constants.OCTOPUS_NUM; count++) {
+            octopuses[count].update();
+        }
+
+        collision1.update();
         scoreboard.update();
 
         if (scoreboard.lives <= 0) {
@@ -28,26 +32,10 @@ module states {
             currentState = constants.GAME_OVER_STATE;
             changeState(currentState);
         }
-
-        if (scoreboard.score >= 1000) {
-            constants.SCORE_HP = scoreboard.hp;
-            constants.SCORE_LIVES = scoreboard.lives;
-            constants.SCORE_SCORE = scoreboard.score;
-            stage.removeChild(game);
-            submarine.destroy();
-            game.removeAllChildren();
-            game.removeAllEventListeners();
-            currentState = constants.PLAY_STATE2;
-            changeState(currentState);
-        }
-    }
-
-    function shotBullet() {
-
     }
 
     // play state Function
-    export function play(): void {
+    export function play1(): void {
         // Declare new Game Container
         game = new createjs.Container();
 
@@ -64,13 +52,16 @@ module states {
             sharks[count] = new objects.Shark(stage, game);
         }
 
-        stage.addEventListener("click", shotBullet);
+        // Create multiple octopuses
+        for (var count = 0; count < constants.OCTOPUS_NUM; count++) {
+            octopuses[count] = new objects.Octopus(stage, game);
+        }
 
         // Display Scoreboard
         scoreboard = new objects.Scoreboard(stage, game);
 
         // Instantiate Collision Manager
-        collision = new managers.Collision(submarine, treasurebox, sharks, scoreboard);
+        collision1 = new managers.Collision1(submarine, treasurebox, sharks, scoreboard, octopuses);
 
         stage.addChild(game);
     }

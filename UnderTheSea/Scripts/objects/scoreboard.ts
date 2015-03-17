@@ -13,9 +13,17 @@
         constructor(stage: createjs.Stage, game: createjs.Container) {
             this.stage = stage;
             this.game = game;
-            this.lives = constants.SUBMARINE_LIVES;
-            this.score = 0;
-            this.hp = constants.SUBMARINE_HP;
+
+            if (currentState == constants.PLAY_STATE) {
+
+                this.lives = constants.SUBMARINE_LIVES;
+                this.score = 0;
+                this.hp = constants.SUBMARINE_HP;
+            } else if (currentState == constants.PLAY_STATE2) {
+                this.lives = constants.SCORE_LIVES;
+                this.score = constants.SCORE_SCORE;
+                this.hp = constants.SCORE_HP;
+            }
             this.label = new createjs.Text(this.labelText, constants.LABEL_FONT, constants.LABEL_COLOUR);
             this.update();
             this.width = this.label.getBounds().width;

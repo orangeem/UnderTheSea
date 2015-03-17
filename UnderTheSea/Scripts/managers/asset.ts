@@ -31,7 +31,8 @@
             [85, 0, 84, 68],
             [246, 273, 233, 66],
             [0, 160, 237, 58],
-            [12, 221, 223, 65]            
+            [12, 221, 223, 65],
+            [1, 0, 68, 70]            
         ],
         "animations": {
             "shark": [0],
@@ -40,7 +41,8 @@
             "submarine": [3],
             "playButton": [4],
             "tryAgainButton": [5],
-            "backToMenuButton" : [6]            
+            "backToMenuButton": [6],
+            "octopus": [7]            
         }
     }
 
