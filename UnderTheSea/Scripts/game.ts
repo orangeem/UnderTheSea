@@ -3,11 +3,15 @@
 /// <reference path="objects/shark.ts" />
 /// <reference path="objects/treasurebox.ts" />
 /// <reference path="objects/ocean.ts" />
+/// <reference path="objects/bullet.ts" />
 /// <reference path="objects/submarine.ts" />
 /// <reference path="objects/scoreboard.ts" />
 /// <reference path="objects/label.ts" />
 /// <reference path="objects/button.ts" />
 /// <reference path="managers/collision.ts" />
+/// <reference path="managers/collision1.ts" />
+/// <reference path="managers/bulletCollision.ts" />
+/// <reference path="managers/bulletCollision1.ts" />
 /// <reference path="states/play.ts" />
 /// <reference path="states/menu.ts" />
 /// <reference path="states/gameover.ts" />
@@ -20,6 +24,7 @@ var game: createjs.Container;
 var ocean: objects.Ocean;
 var submarine: objects.Submarine;
 var treasurebox: objects.Treasurebox;
+var bullet: objects.Bullet;
 var sharks = []; // sharks array;
 var octopuses = []; // octopuses array;
 var scoreboard: objects.Scoreboard;
@@ -27,6 +32,8 @@ var bgmSound: createjs.SoundInstance;
 
 var collision: managers.Collision;
 var collision1: managers.Collision1;
+var bulletStage1: managers.bulletCollision;
+var bulletStage2: managers.bulletCollision1;
 
 var tryAgain: objects.Button;
 var playButton: objects.Button;

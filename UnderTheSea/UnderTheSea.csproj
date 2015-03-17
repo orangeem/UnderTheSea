@@ -121,6 +121,8 @@
     <TypeScriptCompile Include="Scripts\lib\soundjs.d.ts" />
     <TypeScriptCompile Include="Scripts\lib\tweenjs.d.ts" />
     <TypeScriptCompile Include="Scripts\managers\asset.ts" />
+    <TypeScriptCompile Include="Scripts\managers\bulletCollision.ts" />
+    <TypeScriptCompile Include="Scripts\managers\bulletCollision1.ts" />
     <TypeScriptCompile Include="Scripts\managers\collision.ts" />
     <TypeScriptCompile Include="Scripts\managers\collision1.ts" />
     <TypeScriptCompile Include="Scripts\objects\bullet.ts" />
@@ -154,7 +156,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>34002</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:9999/</IISUrl>
+          <IISUrl>http://localhost:7878</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -2,7 +2,7 @@
 /// <reference path="../objects/treasurebox.ts" />
 /// <reference path="../objects/submarine.ts" />
 /// <reference path="../objects/scoreboard.ts" />
-
+/// <reference path="../objects/bullet.ts" />
 module managers {
     // Collision Manager Class
     export class Collision {
@@ -11,12 +11,12 @@ module managers {
         private treasurebox: objects.Treasurebox;
         private sharks = [];
         private scoreboard: objects.Scoreboard;
-
+        
         constructor(submarine: objects.Submarine, treasurebox: objects.Treasurebox, sharks, scoreboard: objects.Scoreboard) {
             this.submarine = submarine;
             this.treasurebox = treasurebox;
             this.sharks = sharks;
-            this.scoreboard = scoreboard;
+            this.scoreboard = scoreboard;            
         }
 
         // Utility method - Distance calculation between two points
@@ -70,11 +70,11 @@ module managers {
                 this.treasurebox.reset();
             }
         }
-
+                
         // Utility Function to Check Collisions
         update() {
             for (var count = 0; count < constants.SHARK_NUM; count++) {
-                this.submarineAndShark(this.sharks[count]);
+                this.submarineAndShark(this.sharks[count]);                
             }
             this.submarineAndTreasurebox();
         }

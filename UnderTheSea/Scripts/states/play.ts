@@ -1,25 +1,39 @@
 ﻿/// <reference path="../objects/button.ts" />
 /// <reference path="../objects/shark.ts" />
 /// <reference path="../objects/treasurebox.ts" />
+/// <reference path="../objects/bullet.ts" />
 /// <reference path="../objects/label.ts" />
 /// <reference path="../objects/ocean.ts" />
 /// <reference path="../objects/submarine.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../managers/collision.ts" />
+/// <reference path="../managers/bulletCollision.ts" />
+/// <reference path="../managers/bulletCollision1.ts" />
 module states {
+
+    var count: number=0;
     
     export function playState() {
         ocean.update();
         treasurebox.update();
         submarine.update();
+        
+        //bullet update and collision update
+        if (constants.BULLET_FLAG == true) {
+
+            bullet.update();
+            bulletStage1.update();
+        }
 
         for (var count = 0; count < constants.SHARK_NUM; count++) {
             sharks[count].update();
         }
 
         collision.update();
+            
         scoreboard.update();
-
+        
+        
         if (scoreboard.lives <= 0) {
             stage.removeChild(game);
             submarine.destroy();
@@ -29,7 +43,7 @@ module states {
             changeState(currentState);
         }
 
-        if (scoreboard.score >= 1000) {
+        if (scoreboard.score >= 100) {
             constants.SCORE_HP = scoreboard.hp;
             constants.SCORE_LIVES = scoreboard.lives;
             constants.SCORE_SCORE = scoreboard.score;
@@ -37,13 +51,25 @@ module states {
             submarine.destroy();
             game.removeAllChildren();
             game.removeAllEventListeners();
+            stage.removeAllEventListeners();
             currentState = constants.PLAY_STATE2;
             changeState(currentState);
         }
     }
 
-    function shotBullet() {
+    //bullet mouse event
+    export function shotBullet(event: MouseEvent) {
+        
+        console.log("before : "+constants.BULLET_FLAG);  
+       if (constants.BULLET_FLAG == false) {
+            
+            constants.BULLET_Y = stage.mouseY;               
+            bullet = new objects.Bullet(stage, game);
+            bulletStage1 = new managers.bulletCollision(sharks, scoreboard, bullet);
 
+            constants.BULLET_FLAG = true;  
+            console.log(constants.BULLET_FLAG);     
+        }
     }
 
     // play state Function
@@ -64,8 +90,9 @@ module states {
             sharks[count] = new objects.Shark(stage, game);
         }
 
+        ////shot bullet
         stage.addEventListener("click", shotBullet);
-
+        
         // Display Scoreboard
         scoreboard = new objects.Scoreboard(stage, game);
 

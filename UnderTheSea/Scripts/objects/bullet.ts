@@ -8,23 +8,34 @@ module objects {
         engineSound: createjs.SoundInstance;
         width: number;
         height: number;
+        dx: number;
         constructor(stage: createjs.Stage, game: createjs.Container) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Sprite(managers.Assets.atlas, "submarine");
+            this.image = new createjs.Sprite(managers.Assets.atlas, "octopus");
             this.image.x = 50;
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.image.regX = this.width / 2;
             this.image.regY = this.height / 2;
-            game.addChild(this.image);
             this.engineSound = createjs.Sound.play('engine', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
+            this.dx = 10;
+            //constants.BULLET_FLAG = true;
+
+            game.addChild(this.image);
         }
 
 
         update() {
-            this.image.x = this.stage.mouseX;
+            this.image.x += this.dx;
+            this.image.y = constants.BULLET_Y;
+
+            if (this.image.x > this.stage.canvas.width + this.width) {
+                this.destroy();
+                constants.BULLET_FLAG = false;
+            }
         }
+
         destroy() {
             this.engineSound.stop();
             game.removeChild(this.image);

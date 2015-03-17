@@ -16,4 +16,6 @@
     export var SCORE_HP: number;
     export var SCORE_LIVES: number;
     export var SCORE_SCORE: number;
+    export var BULLET_FLAG: boolean = false;
+    export var BULLET_Y: number;
 }
