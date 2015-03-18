@@ -34,7 +34,7 @@ var states;
             currentState = constants.GAME_OVER_STATE;
             changeState(currentState);
         }
-        if (scoreboard.score >= 100) {
+        if (scoreboard.score >= 1000) {
             constants.SCORE_HP = scoreboard.hp;
             constants.SCORE_LIVES = scoreboard.lives;
             constants.SCORE_SCORE = scoreboard.score;
@@ -50,7 +50,6 @@ var states;
     states.playState = playState;
     //bullet mouse event
     function shotBullet(event) {
-        console.log("before : " + constants.BULLET_FLAG);
         if (constants.BULLET_FLAG == false) {
             constants.BULLET_Y = stage.mouseY;
             bullet = new objects.Bullet(stage, game);

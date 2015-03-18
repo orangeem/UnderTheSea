@@ -12,13 +12,14 @@ module objects {
         constructor(stage: createjs.Stage, game: createjs.Container) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Sprite(managers.Assets.atlas, "octopus");
+            this.image = new createjs.Sprite(managers.Assets.atlas, "bubble");
             this.image.x = 50;
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.image.regX = this.width / 2;
             this.image.regY = this.height / 2;
-            this.engineSound = createjs.Sound.play('engine', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
+            //this.engineSound = createjs.Sound.play('shot', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
+            createjs.Sound.play("shot");
             this.dx = 10;
             //constants.BULLET_FLAG = true;
 
@@ -37,7 +38,7 @@ module objects {
         }
 
         destroy() {
-            this.engineSound.stop();
+            //this.engineSound.stop();
             game.removeChild(this.image);
         }
     }

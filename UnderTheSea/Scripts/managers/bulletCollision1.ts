@@ -47,7 +47,7 @@ module managers {
             p2.y = shark.image.y;
 
             if (this.distance(p1, p2) < ((this.bullet.height / 2) + (shark.height / 2))) {
-                createjs.Sound.play("thunder");
+                createjs.Sound.play("uhoh");
                 shark.reset();
             }
         }
@@ -61,7 +61,7 @@ module managers {
             p2.x = octopus.image.x;
             p2.y = octopus.image.y;
             if (this.distance(p1, p2) < ((this.bullet.height / 2) + (octopus.height / 2))) {
-                createjs.Sound.play("thunder");
+                createjs.Sound.play("uhoh");
                 
                 octopus.reset();
             }

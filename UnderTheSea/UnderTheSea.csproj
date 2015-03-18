@@ -65,6 +65,12 @@
     <Content Include="packages.config" />
     <Content Include="Scripts\lib\jquery-2.1.1.min.map" />
     <Content Include="assets\sounds\underthesea.ogg" />
+    <Content Include="assets\sounds\bubble.ogg" />
+    <Content Include="assets\sounds\tada.ogg" />
+    <Content Include="assets\sounds\yoshi.ogg" />
+    <Content Include="assets\sounds\twang.ogg" />
+    <Content Include="assets\sounds\uhoh.ogg" />
+    <Content Include="assets\sounds\bite.ogg" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

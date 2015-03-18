@@ -3,9 +3,11 @@
     var assetManifest = [
         { id: "loading", src: "assets/images/loading.jpg" },
         { id: "ocean", src: "assets/images/underthesea.png" },
-        { id: "engine", src: "assets/sounds/engine.ogg" },
-        { id: "thunder", src: "assets/sounds/thunder.ogg" },
-        { id: "yay", src: "assets/sounds/yay.ogg" },
+        { id: "shot", src: "assets/sounds/bubble.ogg" },
+        { id: "uhoh", src: "assets/sounds/uhoh.ogg" },
+        { id: "tada", src: "assets/sounds/tada.ogg" },
+        { id: "twang", src: "assets/sounds/twang.ogg" },
+        { id: "bite", src: "assets/sounds/bite.ogg" },
         { id: "bgm", src: "assets/sounds/underthesea.ogg" }
         
     ];
@@ -20,7 +22,7 @@
     //playgame 246, 273, 233, 66
     //finalboss 268, 0, 233, 238
     //backtomenu 12, 221, 223, 65
-
+    //bubble 158, 90,59, 58
 
     var spriteSheetData = {
         "images": ["assets/images/utilities.png"],
@@ -32,7 +34,8 @@
             [246, 273, 233, 66],
             [0, 160, 237, 58],
             [12, 221, 223, 65],
-            [1, 0, 68, 70]            
+            [1, 0, 68, 70],
+            [158,90, 59, 58]            
         ],
         "animations": {
             "shark": [0],
@@ -42,7 +45,8 @@
             "playButton": [4],
             "tryAgainButton": [5],
             "backToMenuButton": [6],
-            "octopus": [7]            
+            "octopus": [7],
+            "bubble": [8]            
         }
     }
 

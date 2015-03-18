@@ -40,6 +40,7 @@ module states {
             submarine.destroy();
             game.removeAllChildren();
             game.removeAllEventListeners();
+            stage.removeAllEventListeners();
             currentState = constants.GAME_OVER_STATE;
             changeState(currentState);
         }

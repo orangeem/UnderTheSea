@@ -43,7 +43,7 @@ module states {
             changeState(currentState);
         }
 
-        if (scoreboard.score >= 100) {
+        if (scoreboard.score >= 1000) {
             constants.SCORE_HP = scoreboard.hp;
             constants.SCORE_LIVES = scoreboard.lives;
             constants.SCORE_SCORE = scoreboard.score;
@@ -60,7 +60,7 @@ module states {
     //bullet mouse event
     export function shotBullet(event: MouseEvent) {
         
-        console.log("before : "+constants.BULLET_FLAG);  
+         
        if (constants.BULLET_FLAG == false) {
             
             constants.BULLET_Y = stage.mouseY;               
