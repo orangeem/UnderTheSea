@@ -68,7 +68,7 @@
     <Content Include="assets\sounds\tada.ogg" />
     <Content Include="assets\sounds\twang.ogg" />
     <Content Include="assets\sounds\uhoh.ogg" />
-    <Content Include="assets\sounds\bite.ogg" />
+    <Content Include="assets\sounds\boo.ogg" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -118,6 +118,7 @@
     <TypeScriptCompile Include="Scripts\managers\bulletCollision1.ts" />
     <TypeScriptCompile Include="Scripts\managers\collision.ts" />
     <TypeScriptCompile Include="Scripts\managers\collision1.ts" />
+    <TypeScriptCompile Include="Scripts\objects\boss.ts" />
     <TypeScriptCompile Include="Scripts\objects\bullet.ts" />
     <TypeScriptCompile Include="Scripts\objects\button.ts" />
     <TypeScriptCompile Include="Scripts\objects\octopus.ts" />

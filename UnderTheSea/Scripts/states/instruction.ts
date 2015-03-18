@@ -39,7 +39,7 @@ module states {
         stage.cursor = "default";
 
         // Display instruction
-        howtoplayLabel = new objects.Label(stage.canvas.width / 2, 100, "How to play");
+        howtoplayLabel = new objects.Label(stage.canvas.width / 2, 80, "How to play");
         game.addChild(howtoplayLabel);
 
         
@@ -51,23 +51,23 @@ module states {
 
        
         img_sub.x = 200;
-        img_sub.y = 400;
+        img_sub.y = 350;
         game.addChild(img_sub);
 
         img_shark.x = 300;
-        img_shark.y = 400;
+        img_shark.y = 350;
         game.addChild(img_shark);
 
         img_octopus.x = 450;
-        img_octopus.y = 400;
+        img_octopus.y = 350;
         game.addChild(img_octopus);
 
         img_box.x = 550;
-        img_box.y = 400;
+        img_box.y = 350;
         game.addChild(img_box);
 
         // Display back to menu Button
-        backToMenuButton = new objects.Button(stage.canvas.width / 2, 550, "backToMenuButton");
+        backToMenuButton = new objects.Button(stage.canvas.width / 2, 500, "backToMenuButton");
         game.addChild(backToMenuButton);
         backToMenuButton.addEventListener("click", backToMenuClicked);
 

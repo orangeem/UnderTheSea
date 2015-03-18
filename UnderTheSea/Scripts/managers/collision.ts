@@ -45,7 +45,7 @@ module managers {
             p2.x = shark.image.x;
             p2.y = shark.image.y;
             if (this.distance(p1, p2) < ((this.submarine.height / 2) + (shark.height / 2))) {
-                createjs.Sound.play("bite");
+                createjs.Sound.play("boo");
                 if (this.scoreboard.hp <= 25) {                    
                     this.scoreboard.lives -= 1;
                     this.scoreboard.hp = 100;

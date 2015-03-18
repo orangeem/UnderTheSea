@@ -6,7 +6,7 @@
         { id: "uhoh", src: "assets/sounds/uhoh.ogg" },
         { id: "tada", src: "assets/sounds/tada.ogg" },
         { id: "twang", src: "assets/sounds/twang.ogg" },
-        { id: "bite", src: "assets/sounds/bite.ogg" },
+        { id: "boo", src: "assets/sounds/boo.ogg" },
         { id: "bgm", src: "assets/sounds/underthesea.ogg" }
         
     ];
@@ -34,7 +34,7 @@
             [0, 160, 237, 58],
             [12, 221, 223, 65],
             [1, 0, 68, 70],
-            [158,90, 59, 58]            
+            [159,90, 60, 58]            
         ],
         "animations": {
             "shark": [0],
