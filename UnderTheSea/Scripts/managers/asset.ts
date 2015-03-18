@@ -1,7 +1,6 @@
 ﻿module managers {
     // Image and Sound Manifest;
     var assetManifest = [
-        { id: "loading", src: "assets/images/loading.jpg" },
         { id: "ocean", src: "assets/images/underthesea.png" },
         { id: "shot", src: "assets/sounds/bubble.ogg" },
         { id: "uhoh", src: "assets/sounds/uhoh.ogg" },

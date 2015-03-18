@@ -61,13 +61,11 @@
   <ItemGroup>
     <Content Include="assets\images\underthesea.png" />
     <Content Include="assets\images\utilities.png" />
-    <Content Include="assets\images\_sdfundersea_1.png" />
     <Content Include="packages.config" />
     <Content Include="Scripts\lib\jquery-2.1.1.min.map" />
     <Content Include="assets\sounds\underthesea.ogg" />
     <Content Include="assets\sounds\bubble.ogg" />
     <Content Include="assets\sounds\tada.ogg" />
-    <Content Include="assets\sounds\yoshi.ogg" />
     <Content Include="assets\sounds\twang.ogg" />
     <Content Include="assets\sounds\uhoh.ogg" />
     <Content Include="assets\sounds\bite.ogg" />
@@ -79,14 +77,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\images\1945.bmp" />
-    <Content Include="assets\images\atlas.png" />
-    <Content Include="assets\images\cloud.png" />
-    <Content Include="assets\images\island.png" />
-    <Content Include="assets\images\loading.jpg" />
-    <Content Include="assets\images\ocean.gif" />
-    <Content Include="assets\images\plane.png" />
-    <Content Include="assets\images\sideplane.gif" />
     <Content Include="css\app.css" />
     <Content Include="css\normalize.css" />
     <Content Include="index.html" />
@@ -98,9 +88,6 @@
     <Content Include="Scripts\filters\ColorMatrixFilter.js" />
     <Content Include="Scripts\filters\Filter.js" />
     <Content Include="Scripts\lib\easeljs-0.7.1.min.js" />
-    <Content Include="assets\sounds\engine.ogg" />
-    <Content Include="assets\sounds\thunder.ogg" />
-    <Content Include="assets\sounds\yay.ogg" />
     <None Include="Scripts\lib\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\lib\jquery-2.1.1.js" />
     <Content Include="Scripts\lib\jquery-2.1.1.min.js" />

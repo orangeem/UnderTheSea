@@ -23,7 +23,12 @@ module states {
     export function instruction() {
 
         var howtoplayLabel: objects.Label;
-
+        var enemy: objects.Label;
+        var treasure: objects.Label;
+        var img_sub = new createjs.Sprite(managers.Assets.atlas, "submarine");
+        var img_shark = new createjs.Sprite(managers.Assets.atlas, "shark");
+        var img_octopus = new createjs.Sprite(managers.Assets.atlas, "octopus");
+        var img_box = new createjs.Sprite(managers.Assets.atlas, "treasurebox");
         // Declare new Game Container
         game = new createjs.Container();
 
@@ -34,11 +39,35 @@ module states {
         stage.cursor = "default";
 
         // Display instruction
-        howtoplayLabel = new objects.Label(stage.canvas.width / 2, 40, "How to play");
+        howtoplayLabel = new objects.Label(stage.canvas.width / 2, 100, "How to play");
         game.addChild(howtoplayLabel);
 
+        
+        enemy = new objects.Label(stage.canvas.width / 2, 170, "Avoid or shot enemy with your submarine");
+        game.addChild(enemy);
+
+        treasure = new objects.Label(stage.canvas.width / 2, 270, "Touch treasure box with your submarine\n\nto get score");
+        game.addChild(treasure);
+
+       
+        img_sub.x = 200;
+        img_sub.y = 400;
+        game.addChild(img_sub);
+
+        img_shark.x = 300;
+        img_shark.y = 400;
+        game.addChild(img_shark);
+
+        img_octopus.x = 450;
+        img_octopus.y = 400;
+        game.addChild(img_octopus);
+
+        img_box.x = 550;
+        img_box.y = 400;
+        game.addChild(img_box);
+
         // Display back to menu Button
-        backToMenuButton = new objects.Button(stage.canvas.width / 2, 250, "backToMenuButton");
+        backToMenuButton = new objects.Button(stage.canvas.width / 2, 550, "backToMenuButton");
         game.addChild(backToMenuButton);
         backToMenuButton.addEventListener("click", backToMenuClicked);
 

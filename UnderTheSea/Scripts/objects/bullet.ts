@@ -20,7 +20,7 @@ module objects {
             this.image.regY = this.height / 2;
             //this.engineSound = createjs.Sound.play('shot', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
             createjs.Sound.play("shot");
-            this.dx = 10;
+            this.dx = 15;
             //constants.BULLET_FLAG = true;
 
             game.addChild(this.image);
