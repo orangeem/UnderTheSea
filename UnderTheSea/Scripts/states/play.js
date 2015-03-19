@@ -35,7 +35,7 @@ var states;
             changeState(currentState);
         }
         //save score for next stage
-        if (scoreboard.score >= 100 && constants.BULLET_FLAG == false) {
+        if (scoreboard.score >= 1000 && constants.BULLET_FLAG == false) {
             constants.SCORE_HP = scoreboard.hp;
             constants.SCORE_LIVES = scoreboard.lives;
             constants.SCORE_SCORE = scoreboard.score;
