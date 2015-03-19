@@ -1,0 +1,9 @@
+/// <reference path="../constants.ts" />
+/// <reference path="../objects/scoreboard.ts" />
+/// <reference path="../objects/submarine.ts" />
+/// <reference path="../objects/ocean.ts" />
+/// <reference path="../objects/treasurebox.ts" />
+/// <reference path="../objects/shark.ts" />
+/// <reference path="../objects/button.ts" />
+/// <reference path="../objects/label.ts" />
+//# sourceMappingURL=howtoplay.js.map
