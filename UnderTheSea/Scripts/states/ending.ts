@@ -69,6 +69,7 @@ module states {
         game.addChild(tryAgain);
         tryAgain.addEventListener("click", tryAgainClicked1);
 
+        // Display back to menu button
         backToMenuButton = new objects.Button(stage.canvas.width / 2, 450, "backToMenuButton");
         game.addChild(backToMenuButton);
         backToMenuButton.addEventListener("click", backToMenuClicked2);

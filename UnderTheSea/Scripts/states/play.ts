@@ -43,6 +43,7 @@ module states {
             changeState(currentState);
         }
 
+        //save score for next stage
         if (scoreboard.score >= 100 && constants.BULLET_FLAG == false) {
             constants.SCORE_HP = scoreboard.hp;
             constants.SCORE_LIVES = scoreboard.lives;
@@ -90,7 +91,7 @@ module states {
             sharks[count] = new objects.Shark(stage, game);
         }
 
-        ////shot bullet
+        //shot bullet
         stage.addEventListener("click", shotBullet);
         
         // Display Scoreboard

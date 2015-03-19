@@ -53,6 +53,7 @@
             
         }
 
+        //HP control
         stateHP(hp: number) {
             game.removeChild(this.sub_hp);
             this.sub_hp = new createjs.Shape();

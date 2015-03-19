@@ -121,7 +121,7 @@ function changeState(state: number): void {
 
         case constants.PLAY_STATE2:
             currentStateFunction = states.playState2;
-            // instantiate instruction screen
+            // instantiate stage2 screen
             states.play1();
             break;
 

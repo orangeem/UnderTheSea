@@ -36,7 +36,6 @@ module states {
         scoreboard.update();
 
         if (scoreboard.lives <= 0 && constants.BULLET_FLAG == false) {
-            bullet.destroy();
             stage.removeChild(game);
             submarine.destroy();
             game.removeAllChildren();
@@ -46,6 +45,7 @@ module states {
             changeState(currentState);
         }
 
+        //save score for next stage.
         if (scoreboard.score >= 200 && constants.BULLET_FLAG == false) {
             constants.SCORE_HP = scoreboard.hp;
             constants.SCORE_LIVES = scoreboard.lives;

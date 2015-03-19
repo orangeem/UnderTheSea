@@ -43,6 +43,7 @@ module states {
             changeState(currentState);
         }
 
+        //Save score for final screen
         if (constants.BOSS_HP <= 0 && constants.BULLET_FLAG == false) {
             constants.SCORE_HP = scoreboard.hp;
             constants.SCORE_LIVES = scoreboard.lives;
@@ -59,8 +60,7 @@ module states {
     
     //bullet mouse event
     export function shotBullet3(event: MouseEvent) {
-
-
+        
         if (constants.BULLET_FLAG == false) {
 
             constants.BULLET_Y = stage.mouseY;

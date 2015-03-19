@@ -26,7 +26,6 @@ module objects {
             this.image.y = this.stage.mouseY;
         }
         destroy() {
-          //  this.engineSound.stop();
             game.removeChild(this.image);
         }
     }

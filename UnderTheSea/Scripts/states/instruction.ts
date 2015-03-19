@@ -56,10 +56,10 @@ module states {
         howtoplayLabel = new objects.Label(stage.canvas.width / 2, 40, "How to play");
         game.addChild(howtoplayLabel);
 
-        explainTxt = new createjs.Text("Ursula took the mermaid!!! To save the mermaid, kill all enemies", "30px Arial", "#86E57F");
+        explainTxt = new createjs.Text("Ursula took the mermaid!!! To save the mermaid, kill all enemies\nwith your bubble bullet! It will shot when you click the mouse", "30px Arial", "#86E57F");
         explainTxt.textAlign = "center";
         explainTxt.x = stage.canvas.width / 2;
-        explainTxt.y = 120;
+        explainTxt.y = 100;
         game.addChild(explainTxt);
 
         enemyTitle = new createjs.Text("- Enemies -", "30px Arial", "#ffffff");

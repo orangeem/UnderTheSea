@@ -54,6 +54,7 @@ module states {
         game.addChild(playButton);
         playButton.addEventListener("click", playButtonClicked);
 
+        // Display instruction button
         howToPlayButton = new objects.Button(stage.canvas.width / 2, 350, "instructionsButton");
         game.addChild(howToPlayButton);
         howToPlayButton.addEventListener("click", instructionButtonClicked);

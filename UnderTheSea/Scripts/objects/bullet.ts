@@ -18,11 +18,9 @@ module objects {
             this.height = this.image.getBounds().height;
             this.image.regX = this.width / 2;
             this.image.regY = this.height / 2;
-            //this.engineSound = createjs.Sound.play('shot', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
             createjs.Sound.play("shot");
             this.dx = 15;
-            //constants.BULLET_FLAG = true;
-
+            
             game.addChild(this.image);
         }
 
@@ -38,7 +36,6 @@ module objects {
         }
 
         destroy() {
-            //this.engineSound.stop();
             game.removeChild(this.image);
         }
     }
