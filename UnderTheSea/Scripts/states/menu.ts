@@ -4,6 +4,7 @@
 /// <reference path="../objects/ocean.ts" />
 /// <reference path="../objects/treasurebox.ts" />
 /// <reference path="../objects/shark.ts" />
+/// <reference path="../objects/boss.ts" />
 /// <reference path="../objects/octopus.ts" />
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />

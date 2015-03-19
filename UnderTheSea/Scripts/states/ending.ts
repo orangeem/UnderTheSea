@@ -7,12 +7,12 @@
 /// <reference path="../objects/submarine.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 module states {
-    export function gameOverState() {
+    export function ending() {
         ocean.update();
     }
 
     // Restart Game when Try Again Button is clicked
-    export function tryAgainClicked(event: MouseEvent) {
+    export function tryAgainClicked1(event: MouseEvent) {
         stage.removeChild(game);
         game.removeAllChildren();
         game.removeAllEventListeners();
@@ -21,7 +21,7 @@ module states {
     }
 
     // back to menu when backToMenu Button is clicked
-    export function backToMenuClicked1(event: MouseEvent) {
+    export function backToMenuClicked2(event: MouseEvent) {
         stage.removeChild(game);
         game.removeAllChildren();
         game.removeAllEventListeners();
@@ -30,10 +30,11 @@ module states {
     }
 
     // Game Over Scene
-    export function gameOver() {
+    export function gameEnding() {
         var gameOverLabel: objects.Label;
         var finalScoreLabel: objects.Label;
         var finalScore: objects.Label;
+        var endingTxt: createjs.Text;
 
         // Declare new Game Container
         game = new createjs.Container();
@@ -45,28 +46,35 @@ module states {
         stage.cursor = "default";
 
         // Display Game Over
-        gameOverLabel = new objects.Label(stage.canvas.width / 2, 40, "GAME OVER");
+        gameOverLabel = new objects.Label(stage.canvas.width / 2, 40, "Happy Ending");
         game.addChild(gameOverLabel);
 
+
+        endingTxt = new createjs.Text("Finally, you save mermaid!!", "30px Arial", "#86E57F");
+        endingTxt.textAlign = "center";
+        endingTxt.x = stage.canvas.width / 2;
+        endingTxt.y = 140;
+        game.addChild(endingTxt);
+
         // Display Final Score Label
-        finalScoreLabel = new objects.Label(stage.canvas.width / 2, 120, "FINAL SCORE");
+        finalScoreLabel = new objects.Label(stage.canvas.width / 2, 220, "FINAL SCORE");
         game.addChild(finalScoreLabel);
 
         // Display Final Score
-        finalScore = new objects.Label(stage.canvas.width / 2, 160, scoreboard.score.toString());
+        finalScore = new objects.Label(stage.canvas.width / 2, 285, scoreboard.score.toString());
         game.addChild(finalScore);
 
         // Display Try Again Button
-        tryAgain = new objects.Button(stage.canvas.width / 2, 250, "tryAgainButton");
+        tryAgain = new objects.Button(stage.canvas.width / 2, 350, "tryAgainButton");
         game.addChild(tryAgain);
-        tryAgain.addEventListener("click", tryAgainClicked);
+        tryAgain.addEventListener("click", tryAgainClicked1);
 
-        backToMenuButton = new objects.Button(stage.canvas.width / 2, 350, "backToMenuButton");
+        backToMenuButton = new objects.Button(stage.canvas.width / 2, 450, "backToMenuButton");
         game.addChild(backToMenuButton);
-        backToMenuButton.addEventListener("click", backToMenuClicked1);
+        backToMenuButton.addEventListener("click", backToMenuClicked2);
 
 
         stage.addChild(game);
 
     }
-}
+} 

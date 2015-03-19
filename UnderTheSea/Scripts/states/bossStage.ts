@@ -1,39 +1,39 @@
 ﻿/// <reference path="../objects/button.ts" />
-/// <reference path="../objects/shark.ts" />
-/// <reference path="../objects/treasurebox.ts" />
 /// <reference path="../objects/bullet.ts" />
+/// <reference path="../objects/flower.ts" />
+/// <reference path="../objects/jetsam.ts" />
 /// <reference path="../objects/label.ts" />
 /// <reference path="../objects/ocean.ts" />
 /// <reference path="../objects/submarine.ts" />
+/// <reference path="../objects/boss.ts" />
 /// <reference path="../objects/scoreboard.ts" />
-/// <reference path="../managers/collision.ts" />
-/// <reference path="../managers/bulletCollision.ts" />
-/// <reference path="../managers/bulletCollision1.ts" />
+/// <reference path="../managers/finalcollision.ts" />
+/// <reference path="../managers/bulletFinal.ts" />
+
 module states {
 
-    var count: number=0;
-    
-    export function playState() {
+    export function playState3() {
         ocean.update();
-        treasurebox.update();
+        flower.update();
         submarine.update();
         
         //bullet update and collision update
         if (constants.BULLET_FLAG == true) {
 
             bullet.update();
-            bulletStage1.update();
+            bulletStage3.update();
         }
 
-        for (var count = 0; count < constants.SHARK_NUM; count++) {
-            sharks[count].update();
+        for (var count = 0; count < constants.JETSAM_NUM; count++) {
+            jetsams[count].update();
         }
-
-        collision.update();
-            
+        
+        
+        collision2.update();
+        boss.update();
         scoreboard.update();
         
-        
+
         if (scoreboard.lives <= 0 && constants.BULLET_FLAG == false) {
             stage.removeChild(game);
             submarine.destroy();
@@ -43,7 +43,7 @@ module states {
             changeState(currentState);
         }
 
-        if (scoreboard.score >= 100 && constants.BULLET_FLAG == false) {
+        if (constants.BOSS_HP <= 0 && constants.BULLET_FLAG == false) {
             constants.SCORE_HP = scoreboard.hp;
             constants.SCORE_LIVES = scoreboard.lives;
             constants.SCORE_SCORE = scoreboard.score;
@@ -52,52 +52,54 @@ module states {
             game.removeAllChildren();
             game.removeAllEventListeners();
             stage.removeAllEventListeners();
-            currentState = constants.PLAY_STATE2;
+            currentState = constants.ENDING;
             changeState(currentState);
         }
     }
-
+    
     //bullet mouse event
-    export function shotBullet(event: MouseEvent) {
-        
-         
-       if (constants.BULLET_FLAG == false) {
-            
-            constants.BULLET_Y = stage.mouseY;               
-            bullet = new objects.Bullet(stage, game);
-            bulletStage1 = new managers.bulletCollision(sharks, scoreboard, bullet);
+    export function shotBullet3(event: MouseEvent) {
 
-            constants.BULLET_FLAG = true;  
-                
+
+        if (constants.BULLET_FLAG == false) {
+
+            constants.BULLET_Y = stage.mouseY;
+            bullet = new objects.Bullet(stage, game);
+            bulletStage3 = new managers.bulletFinal(jetsams, scoreboard, boss, bullet);
+
+            constants.BULLET_FLAG = true;
+            
         }
     }
-
+    
     // play state Function
-    export function play(): void {
+    export function playBoss(): void {
         // Declare new Game Container
         game = new createjs.Container();
 
         // Instantiate Game Objects
         ocean = new objects.Ocean(stage, game);
-        treasurebox = new objects.Treasurebox(stage, game);
+      
         submarine = new objects.Submarine(stage, game);
+        boss = new objects.Boss(stage, game);
+        flower = new objects.Flower(stage, game);
 
         // Show Cursor
         stage.cursor = "none";
 
-        // Create multiple sharks
-        for (var count = 0; count < constants.SHARK_NUM; count++) {
-            sharks[count] = new objects.Shark(stage, game);
+        //Create multiple jetsams
+        for (var count = 0; count < constants.JETSAM_NUM; count++) {
+            jetsams[count] = new objects.Jetsam(stage, game);
         }
 
-        ////shot bullet
-        stage.addEventListener("click", shotBullet);
+        //shot bullet
+        stage.addEventListener("click", shotBullet3);
         
         // Display Scoreboard
         scoreboard = new objects.Scoreboard(stage, game);
 
         // Instantiate Collision Manager
-        collision = new managers.Collision(submarine, treasurebox, sharks, scoreboard);
+        collision2 = new managers.finalcollision(submarine, flower, jetsams, scoreboard, boss);
 
         stage.addChild(game);
     }

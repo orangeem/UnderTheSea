@@ -7,6 +7,9 @@
         { id: "tada", src: "assets/sounds/tada.ogg" },
         { id: "twang", src: "assets/sounds/twang.ogg" },
         { id: "boo", src: "assets/sounds/boo.ogg" },
+        { id: "aha", src: "assets/sounds/aha.ogg" },
+        { id: "uuu", src: "assets/sounds/uuu.ogg" },
+        { id: "yam", src: "assets/sounds/yamyam.ogg" },
         { id: "bgm", src: "assets/sounds/underthesea.ogg" }
         
     ];
@@ -18,10 +21,12 @@
     //submarine 85, 0, 84, 68
     //playagain 0, 160, 237, 58
     //howtoplay 6,285, 237,59
-    //playgame 246, 273, 233, 66
-    //finalboss 268, 0, 233, 238
+    //playgame 247, 240, 233, 66
+    //finalboss 249, 0, 233, 238
     //backtomenu 12, 221, 223, 65
     //bubble 158, 90,59, 58
+    //jetsam 249, 314, 100, 62
+    //flower 383, 315, 31, 31
 
     var spriteSheetData = {
         "images": ["assets/images/utilities.png"],
@@ -30,11 +35,14 @@
             [6, 285, 237, 59],
             [170, 0, 66, 68],
             [85, 0, 84, 68],
-            [246, 273, 233, 66],
+            [247, 240, 233, 66],
             [0, 160, 237, 58],
             [12, 221, 223, 65],
             [1, 0, 68, 70],
-            [159,90, 60, 58]            
+            [159, 90, 60, 58], 
+            [249, 0, 233, 238],
+            [249, 314, 100, 62],
+            [383, 315, 31, 31]           
         ],
         "animations": {
             "shark": [0],
@@ -45,7 +53,10 @@
             "tryAgainButton": [5],
             "backToMenuButton": [6],
             "octopus": [7],
-            "bubble": [8]            
+            "bubble": [8],  
+            "boss": [9],
+            "jetsam": [10],
+            "flower": [11]          
         }
     }
 

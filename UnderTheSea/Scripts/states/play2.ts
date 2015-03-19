@@ -35,13 +35,27 @@ module states {
         collision1.update();
         scoreboard.update();
 
-        if (scoreboard.lives <= 0) {
+        if (scoreboard.lives <= 0 && constants.BULLET_FLAG == false) {
+            bullet.destroy();
             stage.removeChild(game);
             submarine.destroy();
             game.removeAllChildren();
             game.removeAllEventListeners();
             stage.removeAllEventListeners();
             currentState = constants.GAME_OVER_STATE;
+            changeState(currentState);
+        }
+
+        if (scoreboard.score >= 200 && constants.BULLET_FLAG == false) {
+            constants.SCORE_HP = scoreboard.hp;
+            constants.SCORE_LIVES = scoreboard.lives;
+            constants.SCORE_SCORE = scoreboard.score;
+            stage.removeChild(game);
+            submarine.destroy();
+            game.removeAllChildren();
+            game.removeAllEventListeners();
+            stage.removeAllEventListeners();
+            currentState = constants.PLAY_BOSS;
             changeState(currentState);
         }
     }
@@ -56,7 +70,7 @@ module states {
             bulletStage2 = new managers.bulletCollision1(sharks, scoreboard, octopuses, bullet);
 
             constants.BULLET_FLAG = true;
-            console.log(constants.BULLET_FLAG);
+            
         }
     }
 

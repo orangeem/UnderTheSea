@@ -1,21 +1,28 @@
 ﻿/// <reference path="constants.ts" />
 /// <reference path="managers/asset.ts" />
 /// <reference path="objects/shark.ts" />
+/// <reference path="objects/jetsam.ts" />
+/// <reference path="objects/flower.ts" />
 /// <reference path="objects/treasurebox.ts" />
 /// <reference path="objects/ocean.ts" />
 /// <reference path="objects/bullet.ts" />
 /// <reference path="objects/submarine.ts" />
 /// <reference path="objects/scoreboard.ts" />
+/// <reference path="objects/boss.ts" />
 /// <reference path="objects/label.ts" />
 /// <reference path="objects/button.ts" />
 /// <reference path="managers/collision.ts" />
 /// <reference path="managers/collision1.ts" />
 /// <reference path="managers/bulletCollision.ts" />
 /// <reference path="managers/bulletCollision1.ts" />
+/// <reference path="managers/finalcollision.ts" />
+/// <reference path="managers/bulletFinal.ts" />
 /// <reference path="states/play.ts" />
 /// <reference path="states/menu.ts" />
 /// <reference path="states/gameover.ts" />
+/// <reference path="states/bossStage.ts" />
 /// <reference path="states/instruction.ts" />
+/// <reference path="states/ending.ts" />
 
 
 var stage: createjs.Stage;
@@ -24,7 +31,10 @@ var game: createjs.Container;
 var ocean: objects.Ocean;
 var submarine: objects.Submarine;
 var treasurebox: objects.Treasurebox;
+var flower: objects.Flower;
+var jetsams = []; //jetsam array;
 var bullet: objects.Bullet;
+var boss: objects.Boss;
 var sharks = []; // sharks array;
 var octopuses = []; // octopuses array;
 var scoreboard: objects.Scoreboard;
@@ -32,8 +42,10 @@ var bgmSound: createjs.SoundInstance;
 
 var collision: managers.Collision;
 var collision1: managers.Collision1;
+var collision2: managers.finalcollision;
 var bulletStage1: managers.bulletCollision;
 var bulletStage2: managers.bulletCollision1;
+var bulletStage3: managers.bulletFinal;
 
 var tryAgain: objects.Button;
 var playButton: objects.Button;
@@ -61,9 +73,7 @@ function init(): void {
     currentState = constants.MENU_STATE;
     changeState(currentState);
      
-    bgmSound = createjs.Sound.play("assets/sounds/underthesea.ogg", createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
-  
-    
+    bgmSound = createjs.Sound.play("assets/sounds/underthesea.ogg", createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);   
     
 }
 
@@ -113,6 +123,18 @@ function changeState(state: number): void {
             currentStateFunction = states.playState2;
             // instantiate instruction screen
             states.play1();
+            break;
+
+        case constants.PLAY_BOSS:
+            currentStateFunction = states.playState3;
+            // instantiate final screen
+            states.playBoss();
+            break;
+
+        case constants.ENDING:
+            currentStateFunction = states.ending;
+            // instantiate game ending screen
+            states.gameEnding();
             break;
     }
 }

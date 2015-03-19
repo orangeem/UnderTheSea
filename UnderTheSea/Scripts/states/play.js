@@ -26,7 +26,7 @@ var states;
         }
         collision.update();
         scoreboard.update();
-        if (scoreboard.lives <= 0) {
+        if (scoreboard.lives <= 0 && constants.BULLET_FLAG == false) {
             stage.removeChild(game);
             submarine.destroy();
             game.removeAllChildren();
@@ -34,7 +34,7 @@ var states;
             currentState = constants.GAME_OVER_STATE;
             changeState(currentState);
         }
-        if (scoreboard.score >= 1000) {
+        if (scoreboard.score >= 100 && constants.BULLET_FLAG == false) {
             constants.SCORE_HP = scoreboard.hp;
             constants.SCORE_LIVES = scoreboard.lives;
             constants.SCORE_SCORE = scoreboard.score;
@@ -55,7 +55,6 @@ var states;
             bullet = new objects.Bullet(stage, game);
             bulletStage1 = new managers.bulletCollision(sharks, scoreboard, bullet);
             constants.BULLET_FLAG = true;
-            console.log(constants.BULLET_FLAG);
         }
     }
     states.shotBullet = shotBullet;
