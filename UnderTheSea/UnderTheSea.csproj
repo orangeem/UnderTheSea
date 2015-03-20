@@ -61,6 +61,7 @@
   <ItemGroup>
     <Content Include="assets\images\underthesea.png" />
     <Content Include="assets\images\utilities.png" />
+    <Content Include="index.html" />
     <Content Include="packages.config" />
     <Content Include="Scripts\lib\jquery-2.1.1.min.map" />
     <Content Include="assets\sounds\underthesea.ogg" />
@@ -82,7 +83,6 @@
   <ItemGroup>
     <Content Include="css\app.css" />
     <Content Include="css\normalize.css" />
-    <Content Include="index.html" />
     <Content Include="Scripts\filters\AlphaMapFilter.js" />
     <Content Include="Scripts\filters\AlphaMaskFilter.js" />
     <Content Include="Scripts\filters\BoxBlurFilter.js" />

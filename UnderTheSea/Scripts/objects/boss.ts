@@ -28,7 +28,7 @@ module objects {
             this.image.x -= this.dx;
 
             //boss moving cotrol
-            if (this.image.x < 0 && this.image.y < 0) {
+            if (this.image.x < 7 && this.image.y < 7) {
                 this.reset();
             } else if (this.image.x > this.stage.canvas.width && this.image.y > this.stage.canvas.height) {
                 this.reset();
